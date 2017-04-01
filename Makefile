@@ -7,4 +7,10 @@ website:
 test: website
 	$(HUGO) server
 
-.PHONY: website test
+publish: website
+	cd $(OUTPUTDIR) && git add . && git commit -m "Sync website" && git push
+	git add $(OUTPUTDIR)
+	git commit -m "Refresh submodule"
+	git push
+
+.PHONY: website test publish
