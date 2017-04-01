@@ -2,6 +2,7 @@ HUGO=bin/hugo
 OUTPUTDIR=overkill-io.github.io
 
 website:
+	git submodule update
 	$(HUGO)
 
 test: website
