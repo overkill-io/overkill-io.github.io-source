@@ -2,3 +2,6 @@
 	path = overkill-io.github.io
 	url = git@github.com:overkill-io/overkill-io.github.io.git
 	branch = master
+[submodule "themes/startbootstrap-clean-blog"]
+	path = themes/startbootstrap-clean-blog
+	url = https://github.com/humboldtux/startbootstrap-clean-blog.git

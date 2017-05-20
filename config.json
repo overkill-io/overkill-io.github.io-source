@@ -2,5 +2,39 @@
    "baseURL": "http://overkill.io/",
    "languageCode": "en-us",
    "title": "Overkill.io",
-   "publishDir": "overkill-io.github.io"
+   "publishDir": "overkill-io.github.io",
+   "canonifyUrls": true,
+   "theme": "startbootstrap-clean-blog",
+   "copyright": "© 2017 Overkill.io",
+
+   "menu": {
+       "main": [
+            {
+                "name": "home",
+                "url": "/",
+                "weight": -200
+            },
+            {
+                "name": "categories",
+                "url": "/categories/",
+                "weight": -190
+            },
+            {
+                "name": "archives",
+                "url": "/post/",
+                "weight": -180
+            }
+       ]
+   },
+   
+   "params": {
+        "dateForm": "Jan 2, 2006",
+        
+       "social": [
+            {
+                "title": "github",
+                "url": "https://github.com/overkill-io"
+            }
+       ]
+   }
 }

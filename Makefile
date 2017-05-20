@@ -3,7 +3,7 @@ OUTPUTDIR=overkill-io.github.io
 COMMIT=$(shell git rev-parse --short HEAD)
 
 website:
-	cd ${OUTPUTDIR} && git fetch && git reset --hard origin/master
+	cd ${OUTPUTDIR} && git fetch && git reset --hard origin/master && git clean -df
 	$(HUGO)
 
 test: website

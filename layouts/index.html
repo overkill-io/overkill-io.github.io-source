@@ -1,30 +1,32 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Overkill.io</title>
-		<meta charset="utf-8" />
-		<style type="text/css">
-			body {
-				background-image: url(/img/bg.png);
-				background-position: top center;
-				background-color: #000000;
-			}
-			
-		 section {
-				color: white;
-				border-radius: 1em;
-				padding: 1em;
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				margin-right: -50%;
-				transform: translate(-50%, -50%) 
-			}
-		</style>
-	</head>
-	<body>
-			<section>
-					<img src="/img/logo.png" alt="" title="">
-			</section>
-	</body>
-</html>
+{{ partial "header.html" .}}
+
+    <!-- Page Header -->
+    <header class="intro-header" style="background-image: url('{{ .Site.BaseURL }}/img/home-bg.png')">
+     <div class="container">
+       <div class="row">
+         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+           <div class="site-heading"></div>
+         </div>
+       </div>
+     </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          {{ $posts := or .Site.Params.PostSummariesFrontPage 4 }}
+          {{ range first $posts (where .Data.Pages "Type" "post") }}
+              {{ .Render "summary"}}
+          {{ end }}
+          <!-- Pager -->
+          <ul class="pager">
+            <li class="next">
+              <a href="{{ .Site.BaseURL }}/post/">Older Posts &rarr;</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+{{ partial "footer.html" .}}
